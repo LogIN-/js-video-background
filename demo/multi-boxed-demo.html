@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Video Background Player Plug-in</title>
+    <link href="../lib/video-background.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="main-demo.css" media="all" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Averia+Serif+Libre' rel='stylesheet' type='text/css' />
+</head>
+
+<body id="boxed-demo-body">
+    <section class="boxed-demo" id="video-horizontal-top"></section>
+    <section class="boxed-demo">
+        <div id="video-box-01"></div>
+        <div id="video-box-02"></div>
+        <div id="video-box-03"></div>
+        <div id="video-box-04"></div>
+        <div id="video-box-05"></div>
+    </section>
+    <section class="boxed-demo" id="video-horizontal-bottom"></section>
+</body>
+<script src="../lib/video-background.js" type="text/javascript"></script>
+<script type="text/javascript">
+function startVideoBackground() {
+    var optionsTop = {
+        elementID: "video-horizontal-top",
+        align: "left",
+        display: "absolute",
+        stretch: true,
+        width: 1280,
+        height: 720,
+        autostart: false,
+        controls: false,
+        loop: true,
+        muted: true,
+        videoLocation: "local",
+        path: "video/",
+        filename: "small",
+        // MPEG4 for Safari
+        // Ogg Theora for Firefox 3.1b2
+        types: ["mp4", "ogg", "webm"],
+        poster: false,
+        videoID: "video_background_top",
+        zIndex: "0",
+        // http://www.vinylfox.com/forwarding-mouse-events-through-layers/
+        onclick: function(){
+            // pauseVideo
+            // playVideo
+            // isPaused
+            // isEnded
+
+            if(this.isPaused() === true){
+               this.playVideo(); 
+            }else{
+                this.pauseVideo();
+            }
+            
+        },
+        ended: function() {
+            console.log("ended")
+        },
+        onError: function(e) {
+
+        }
+    }
+    new videoBackground(optionsTop);
+
+    var options01 = {
+        elementID: "video-box-01",
+        align: "left",
+        display: "absolute",
+        stretch: true,
+        width: 1280,
+        height: 720,
+        autostart: false,
+        controls: false,
+        loop: true,
+        muted: true,
+        videoLocation: "local",
+        path: "video/",
+        filename: "example01",
+        types: ["mp4", "ogg", "webm"],
+        poster: "video/example01.jpg",
+        videoID: "video_background01",
+        ended: function() {
+            console.log("ended")
+        },
+        onError: function(e) {}
+    }
+    new videoBackground(options01);
+    var options02 = {
+        elementID: "video-box-02",
+        align: "left",
+        display: "absolute",
+        stretch: true,
+        width: 1280,
+        height: 720,
+        autostart: false,
+        controls: false,
+        loop: true,
+        muted: true,
+        videoLocation: "local",
+        path: "video/",
+        filename: "example01",
+        types: ["mp4", "ogg", "webm"],
+        poster: "video/example01.jpg",
+        videoID: "video_background02",
+        ended: function() {
+            console.log("ended")
+        },
+        onError: function(e) {}
+    }
+    new videoBackground(options02);
+    var options03 = {
+        elementID: "video-box-03",
+        align: "left",
+        display: "absolute",
+        stretch: true,
+        width: 1280,
+        height: 720,
+        autostart: false,
+        controls: false,
+        loop: true,
+        muted: true,
+        videoLocation: "local",
+        path: "video/",
+        filename: "small",
+        types: ["mp4", "ogg", "webm"],
+        poster: false,
+        videoID: "video_background03",
+        ended: function() {
+            console.log("ended")
+        },
+        onError: function(e) {}
+    }
+    new videoBackground(options03);
+    var options04 = {
+        elementID: "video-box-04",
+        align: "left",
+        display: "absolute",
+        stretch: true,
+        width: 1280,
+        height: 720,
+        autostart: false,
+        controls: false,
+        loop: true,
+        muted: true,
+        videoLocation: "local",
+        path: "video/",
+        filename: "example01",
+        types: ["mp4", "ogg", "webm"],
+        poster: "video/example01.jpg",
+        videoID: "video_background04",
+        ended: function() {
+            console.log("ended")
+        },
+        onError: function(e) {}
+    }
+    new videoBackground(options04);
+    var options05 = {
+        elementID: "video-box-05",
+        align: "left",
+        display: "absolute",
+        stretch: true,
+        width: 1280,
+        height: 720,
+        autostart: false,
+        controls: false,
+        loop: true,
+        muted: true,
+        videoLocation: "local",
+        path: "video/",
+        filename: "example01",
+        types: ["mp4", "ogg", "webm"],
+        poster: "video/example01.jpg",
+        videoID: "video_background05",
+        ended: function() {
+            console.log("ended")
+        },
+        onError: function(e) {}
+    }
+    new videoBackground(options05);
+
+    var optionsBottom = {
+        elementID: "video-horizontal-bottom",
+        align: "left",
+        display: "absolute",
+        stretch: true,
+        width: 1280,
+        height: 720,
+        autostart: false,
+        controls: false,
+        loop: true,
+        muted: true,
+        videoLocation: "local",
+        path: "video/",
+        filename: "example01",
+        types: ["mp4", "ogg", "webm"],
+        poster: "video/example01.jpg",
+        videoID: "video_background_bottom",
+        ended: function() {
+            console.log("ended")
+        },
+        onError: function(e) {}
+    }
+    new videoBackground(optionsBottom);
+};
+(function() {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        startVideoBackground();
+    } else {
+        if (document.addEventListener) {
+            document.addEventListener('DOMContentLoaded', function factorial() {
+                startVideoBackground();
+            }, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('onreadystatechange', function() {
+                if (document.readyState === 'complete') {
+                    startVideoBackground();
+                }
+            });
+        }
+    }
+})();
+</script>
+
+</html>

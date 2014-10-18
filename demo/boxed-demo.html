@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"> 
+        <title>href JavaScript Video Background Player Plugin</title>       
+        <link href="../lib/video-background.css" media="all" rel="stylesheet" type="text/css" />
+        <link href="main-demo.css" media="all" rel="stylesheet" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Averia+Serif+Libre' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <section id="boxed-demo">
+            <h1>Full-screen boxed DIV background video demo</h1>
+        </section>
+    </body>
+        <script src="../lib/video-background.js" type="text/javascript"></script>    
+        <script type="text/javascript">
+
+            function startVideoBackground(){
+                var options = {
+                    elementID: "boxed-demo",
+                    align: "center",
+                    display: "absolute",
+                    stretch: true,
+                    width: 1280,
+                    height: 720,
+                    autostart: true,
+                    controls: false,
+                    loop: true,
+                    muted: true,
+                    videoLocation: "local", // Local Or Remote
+                    path: "video/",
+                    filename: "example01",
+                    types: ["mp4","ogg","webm"],
+                    poster: "video/example01.jpg",
+                    videoID: "video_background01",
+                    // // only functional if "loop" is false
+                    ended: function(){
+                        console.log("ended");
+                    },
+                    onError: function(error){
+
+                    }
+                };
+                var bodyVideoBackground = new videoBackground(options);
+            };
+
+            (function () {
+                if (document.readyState === "complete" || document.readyState === "interactive") {
+                    startVideoBackground();
+                } else {
+                    if (document.addEventListener) {
+                        document.addEventListener('DOMContentLoaded', function factorial() {
+                        startVideoBackground();
+                    }, false);
+                    } else if (document.attachEvent) {
+                        document.attachEvent('onreadystatechange', function() {
+                            if (document.readyState === 'complete') {
+                                startVideoBackground();
+                            }
+                        });
+                    }
+                }
+            })();
+        </script>
+</html>

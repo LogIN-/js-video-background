@@ -1,0 +1,126 @@
+/* 
+* @Author: login
+* @Date:   2014-10-07 09:03:39
+* @Last Modified by:   login
+* @Last Modified time: 2014-10-10 12:41:28
+*/
+@charset "UTF-8";
+
+/* ONLY FOR DEMO STYLES */
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("colour_spectrum.jpg");
+    background-origin: padding-box;
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+section#fullscreen-demo {
+    background-color: rgba(255, 255, 255, 0.698);
+    height: 100px;
+    margin-top: -50px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+section#fullscreen-demo h1 {
+    font-family: "Averia Serif Libre",cursive;
+    font-size: 36px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+    text-rendering: optimizelegibility !important;
+    cursor: default;
+}
+
+
+
+body#boxed-demo-body {
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("colour_spectrum.jpg");
+    background-origin: padding-box;
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: cover;
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+section#boxed-demo {
+    height: 350px;
+    margin-top: -175px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    outline: 5px dashed white;
+    overflow: hidden;
+}
+section.boxed-demo {
+    display: block;
+    float: left;
+    height: 33.3333%;
+    outline: 2px dashed white;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+section#boxed-demo h1 {
+    cursor: default;
+    font-family: "Averia Serif Libre",cursive;
+    font-size: 36px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+    position: absolute;
+    text-rendering: optimizelegibility !important;
+    -ms-transform: translate(50px, 100px) rotate(-16deg);
+    -webkit-transform: translate(50px, 100px) rotate(-16deg);
+    transform: translate(50px, 100px) rotate(-16deg);
+    width: 100%;
+}
+
+
+section.boxed-demo div[id*="video-box"] {
+    display: block;
+    float: left;
+    height: 100%;
+    outline: 1px solid white;
+    width: 20%;
+}
+.video-info {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid gray;
+    float: left;
+    font-size: 12px;
+    height: auto;
+    line-height: 17px;
+    padding-left: 5px;
+    text-align: left;
+    width: calc(100% - 5px);
+}
+video {
+     
+}
